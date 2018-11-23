@@ -1,10 +1,15 @@
 package mediathequeback;
 
+import mediathequeback.beans.Adherent;
+
 public class Main {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 
+		Adherent adherent = new Adherent();
+
+		adherent.setNom("Snoop");
+		adherent.getNom();
 	}
 
 }
