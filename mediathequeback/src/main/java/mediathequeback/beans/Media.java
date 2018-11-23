@@ -1,5 +1,7 @@
 package mediathequeback.beans;
 
+import java.util.ArrayList;
+
 public abstract class Media {	  
 	protected String titre;
 	protected String genre;
@@ -8,6 +10,7 @@ public abstract class Media {
 	protected int nbExemplaires;
 	protected String descriptif;
 	protected String commentaire;
+	protected String idMedia;
 
 	//Constructeur par défaut
 	public Media(){
@@ -16,7 +19,7 @@ public abstract class Media {
 
 	//Constructeur avec paramètres
 	//J'ai ajouté un « p » en première lettre des paramètres.
-	public Media(String titre, String genre, String createur, String dateSortie, int nbExemplaires, String descriptif, String commentaire)
+	public Media(String titre, String genre, String createur, String dateSortie, int nbExemplaires, String descriptif, String commentaire,String idMedia)
 	{
 		System.out.println("Saisissez votre nouveau Media: ");
 		this.titre = titre;
@@ -26,6 +29,7 @@ public abstract class Media {
 		this.nbExemplaires = nbExemplaires;
 		this.descriptif = descriptif;
 		this.commentaire = commentaire;
+		this.idMedia = idMedia;
 	}   
 
 	// Methodes              
@@ -34,6 +38,20 @@ public abstract class Media {
 		return "Media : titre=" + titre + ", genre=" + genre + ", createur=" + createur + ", dateSortie=" + dateSortie
 				+ ", nbExemplaires=" + nbExemplaires + ", descriptif=" + descriptif + ", commentaire=" + commentaire + "]";
 	}
+	public abstract boolean ajouterMedia(String titre, String genre, String createur, String dateSortie, int nbExemplaires,
+	String descriptif, String commentaire);
+	
+	public abstract ArrayList<String> afficherMedia(String idMedia);
+	
+	public abstract ArrayList<String> consulterMedia(String idMedia);
+	
+	public abstract boolean supprimerMedia(String idMedia);
+	
+	public abstract boolean louerMedia(String idMedia);
+	
+	
+	
+	
 	//getters and setters
 	public String getTitre() {
 		return titre;
@@ -90,6 +108,6 @@ public abstract class Media {
 	public void setCommentaire(String commentaire) {
 		this.commentaire = commentaire;
 	}	
-
+	
 }
 
