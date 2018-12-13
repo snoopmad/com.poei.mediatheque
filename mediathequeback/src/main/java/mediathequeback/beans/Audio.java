@@ -26,4 +26,8 @@ public class Audio extends Media{
 	public void pause() {
 		System.out.println("Pause");
 	}
+	
+	public void stop() {
+		System.out.println("Stop");
+	}
 }
